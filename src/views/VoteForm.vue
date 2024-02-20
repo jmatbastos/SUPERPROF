@@ -15,7 +15,7 @@
 
 			<table>
 				<tr v-for="prof in profs" :key="prof.id">			
-					<td><input type="radio" :value="prof.id" v-model="vote.prof_id"></td>
+					<td><input style="border: 0px;width: 100%;height: 1.5em;" type="radio" :value="prof.id" v-model="vote.prof_id"></td>
 					<td><label>{{prof.name}}</label></td>
 		
 				</tr>
@@ -74,7 +74,7 @@ export default {
 				this.error = true
 				return
 			}
-			if (confirm(`You are voting ${this.getProfByID(this.vote.prof_id)[0].name}.\nContinue?`)) {				
+			if (confirm(`You are voting for SuperPROF ${this.getProfByID(this.vote.prof_id)[0].name}.\nThe vote is final!\nContinue?`)) {				
 				this.blockchain(this.vote)
             } 
             else {
