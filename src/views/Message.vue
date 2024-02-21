@@ -87,6 +87,6 @@ export default {
 		100%{
 			width: 0%;
 		}
-	};
+	}
 
 </style>
