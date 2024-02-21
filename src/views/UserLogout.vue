@@ -7,9 +7,9 @@
 		<div v-else class="logout">
 			<h1 style="text-align: center;">Logout ?</h1>
 			<p style="text-align: center;">
-				<button @click="cancel()" style="background: orange;">Cancel</button>	
+				<button @click="cancel()" style="border-color:orange; background: orange;">Cancel</button>	
 				&nbsp;&nbsp;			
-				<button @click="logout()" style="background: green;">Logout</button>
+				<button @click="logout()" style="border-color:green; background: green;">Logout</button>
 			</p>
 		</div>
 	</div>

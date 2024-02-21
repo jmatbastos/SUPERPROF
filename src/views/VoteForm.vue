@@ -25,7 +25,7 @@
 			❗Please choose one Prof
 		</p>
 		
-		<p style="float:left;"><button @click="cancel()" style="background: orange;">Cancel</button></p>
+		<p style="float:left;"><button @click="cancel()" style="border-color: orange;background: orange;">Cancel</button></p>
 		<p style="float:right;"><button type="submit">Vote</button></p>
 
 	</form>

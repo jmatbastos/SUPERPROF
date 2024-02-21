@@ -16,7 +16,7 @@
 			❗Please fill out all required fields
 		</p>
 		<br>
-		<button @click="cancel()" style="background: orange;">Cancel</button>	
+		<button @click="cancel()" style="border-color: orange;background: orange;">Cancel</button>	
 		<p style="float:right;"><button type="submit">Login</button></p>
 
 

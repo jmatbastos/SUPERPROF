@@ -1,9 +1,12 @@
 <template>
 	<div class="logout">
 			<h1 class="success-message" style="text-align: center;">{{message}}</h1>
-			<p style="text-align: center;">
-				<button @click="goToTable()" style="background: blue;">{{countdown}}</button>	
-			</p>
+			<div style="text-align: center;">
+				<h5 class="circle">
+				{{countdown}}	
+				</h5>
+			</div>
+
 	</div>
 </template>
 
@@ -68,5 +71,14 @@ export default {
 	.error-message {
 	color: #d33c40;
 	}
+	.circle {
+		padding-top: 12px; 
+		color: white; 
+		display: inline-block;
+		text-align: center; 
+		height: 50px;width: 50px;
+		border-radius: 50%;
+		background: blue;
+	}	
 
 </style>
