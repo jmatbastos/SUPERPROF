@@ -3,7 +3,7 @@
 $hostname = "localhost";
 $db_name = "db_a333330";
 $db_user = "a333330";
-$db_passwd = "*****";
+$db_passwd = "125756";
 
 
 // mostra uma mensagem de erro vinda do mysql
