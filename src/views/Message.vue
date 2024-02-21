@@ -1,10 +1,7 @@
 <template>
 	<div class="logout">
 			<h1 class="success-message" style="text-align: center;">{{message}}</h1>
-			<div style="text-align: center;">
-				<h5 class="circle">
-				{{countdown}}	
-				</h5>
+			<div class="color" style="text-align: center;">
 			</div>
 
 	</div>
@@ -67,18 +64,29 @@ export default {
 	.success-message {
 	color: #32a95d;
 	}
-
-	.error-message {
-	color: #d33c40;
+	.color{
+		position: relative;
+		background-color: #f4a261;
+		height: 20px;
+		border-radius: 25px;
+		animation: progres 3s linear;    
 	}
-	.circle {
-		padding-top: 12px; 
-		color: white; 
-		display: inline-block;
-		text-align: center; 
-		height: 50px;width: 50px;
-		border-radius: 50%;
-		background: blue;
-	}	
+	@keyframes progres{
+		0%{
+		width: 100%;
+		}
+		25%{
+			width: 75%;
+		}
+		50%{
+			width: 50%;
+		}
+		75%{
+			width: 25%;
+		}
+		100%{
+			width: 0%;
+		}
+	};
 
 </style>
