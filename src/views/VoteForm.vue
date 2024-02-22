@@ -1,12 +1,12 @@
 <template>
 <div class="small-container">
-   <div v-if="!userLoggedIn" class="logout">
+   <div v-if="!userLoggedIn" class="logout" style="margin-top: 200px;">
 			<h3 style="text-align: center;">Not logged in </h3>
-			<p style="text-align: center;"><button @click="login()" style="background: green;">Login first</button></p>
+			<p style="text-align: center;"><button @click="login()">Login first</button></p>
   </div>
   <div v-if="userLoggedIn && user.voted=='1'" style="margin-top:200px;">
 	<h3 style="text-align: center;">You have already voted on {{user.voted_at}} </h3>
-	<p style="text-align: center;"><button @click="close()" style="background: green;">Close</button></p>
+	<p style="text-align: center;"><button @click="close()">Close</button></p>
   </div>
   <div v-if="userLoggedIn && user.voted!='1'">
 	<h1 style="text-align: center">Choose your SuperPROF!</h1>

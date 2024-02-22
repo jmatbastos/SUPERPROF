@@ -1,10 +1,13 @@
 <template>
+
 	<div class="logout">
 			<h1 class="success-message" style="text-align: center;">{{message}}</h1>
 			<div class="color" style="text-align: center;">
 			</div>
 
 	</div>
+
+
 </template>
 
 <script>

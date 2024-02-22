@@ -1,27 +1,30 @@
 <template>
-  <div id="login-form" style="margin-top: 50px; border-radius: 25px; padding: 25px; background-color: rgba(255, 255, 255, 0.1);">
-	<h1 style="text-align: center">Login</h1>
-	<form @submit.prevent="handleSubmit">		
+
+	<div id="login-form" style="margin-top: 50px; border-radius: 25px; padding: 25px; background-color: rgba(255, 255, 255, 0.1);">
+		<h1 style="text-align: center">Login</h1>
+		<form @submit.prevent="handleSubmit">		
 
 
-		<label>Password</label>
-		<input
-			type="password"
-			:class="{ 'has-error': submitting && invalidPassword }"
-			v-model="user.password"
-			v-autofocus
-			@keypress="clearStatus"	
-		/>
-		<p v-if="error && submitting" class="error-message">
-			❗Please fill out all required fields
-		</p>
-		<br>
-		<button @click="cancel()" style="border-color: orange;background: orange;">Cancel</button>	
-		<p style="float:right;"><button type="submit">Login</button></p>
+			<label>Password</label>
+			<input
+				type="password"
+				:class="{ 'has-error': submitting && invalidPassword }"
+				v-model="user.password"
+				v-autofocus
+				@keypress="clearStatus"	
+			/>
+			<p v-if="error && submitting" class="error-message">
+				❗Please fill out all required fields
+			</p>
+			<br>
+			<button @click="cancel()" style="border-color: orange;background: orange;">Cancel</button>	
+			<p style="float:right;"><button type="submit">Login</button></p>
 
 
-	</form>
-  </div>
+		</form>
+	</div>
+
+
 </template>
 
 <script>

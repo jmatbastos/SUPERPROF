@@ -1,14 +1,14 @@
 <template>
-	<div>
-		<div class="logout">
-			<h1 style="text-align: center;">Logout ?</h1>
-			<p style="text-align: center;">
-				<button @click="cancel()" style="border-color:orange; background: orange;">Cancel</button>	
-				&nbsp;&nbsp;			
-				<button @click="logout()">Logout</button>
-			</p>
-		</div>
+
+	<div class="logout">
+		<h1 style="text-align: center;">Logout ?</h1>
+		<p style="text-align: center;">
+			<button @click="cancel()" style="border-color:orange; background: orange;">Cancel</button>	
+			&nbsp;&nbsp;			
+			<button @click="logout()">Logout</button>
+		</p>
 	</div>
+
 </template>
 
 <script>
@@ -42,8 +42,9 @@ export default {
 				// destroy session
 				this.logoutUser(this.user.session_id)
 			} else {
-				// No user is signed in.
-				this.$router.push('/')
+				// No user is signed in, it is a Prof!
+				localStorage.setItem('message', 'Bye!');
+                this.$router.push('/message/2')
 			}
 
 		},

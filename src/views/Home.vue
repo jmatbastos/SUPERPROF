@@ -1,11 +1,14 @@
 <template >
-<div class="small-container">
-	<div style="margin-top: 200px; text-align: center">
-		<h1 >Welcome to the SuperProf App !</h1>	
-        <button @click="Login()">Choose your SuperProf!</button>
-	</div>
 
-</div>
+    <div class="small-container">
+        <div style="margin-top: 200px; text-align: center">
+            <h1 >Welcome to the SuperProf App !</h1>	
+            <button @click="Login()">Choose your SuperProf!</button>
+        </div>
+
+    </div>
+
+
 </template>
 
 <script>
