@@ -31,17 +31,19 @@ export default {
 
 
 	methods: {
-		goToTable() {
-			this.$router.push('/')
-		},
         setMessage() {
-			this.message = localStorage.getItem('message')	
-			
+			this.message = localStorage.getItem('message')				
 			var timeleft = 2;
 			var downloadTimer = setInterval(() => {
 				if(timeleft <= 0){
 					clearInterval(downloadTimer)
-					this.$router.push('/')
+					console.log(this.$route.params.id)
+					if (this.$route.params.id == 1)						
+						this.$router.push('/input')
+					if (this.$route.params.id == 2)					
+						this.$router.push('/')
+					if (this.$route.params.id == 3)	
+						this.$router.push('/results')									
 				}
 			timeleft -= 1
 			this.countdown -= 1
@@ -59,6 +61,7 @@ export default {
 	.logout {
 	margin: 0 auto;
 	max-width: 800px;
+	margin-top: 200px;
 	}
 
 	.success-message {

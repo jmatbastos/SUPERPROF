@@ -4,9 +4,9 @@
 			<h3 style="text-align: center;">Not logged in </h3>
 			<p style="text-align: center;"><button @click="login()" style="background: green;">Login first</button></p>
   </div>
-  <div v-if="userLoggedIn && user.voted=='1'" >
+  <div v-if="userLoggedIn && user.voted=='1'" style="margin-top:200px;">
 	<h3 style="text-align: center;">You have already voted on {{user.voted_at}} </h3>
-	<p style="text-align: center;"><button @click="cancel()" style="background: green;">Cancel</button></p>
+	<p style="text-align: center;"><button @click="close()" style="background: green;">Close</button></p>
   </div>
   <div v-if="userLoggedIn && user.voted!='1'">
 	<h1 style="text-align: center">Choose your SuperPROF!</h1>
@@ -88,20 +88,28 @@ export default {
 				//update user voted
 				this.userStore.updateUser()
 				localStorage.setItem('message', `Success, you voted for SuperPROF ${this.getProfByID(this.vote.prof_id)[0].name}`)	
-				this.$router.push('/message')	
+				this.$router.push('/message/3')	
 			}
 		},
 		login() {
 			this.$router.push('/login')
 		},
 		cancel() {
-			this.$router.push('/')
+			localStorage.setItem('message', 'Bye, Come back soon to vote!');
+            this.$router.push('/message/2')
+		},
+		close() {
+			localStorage.setItem('message', 'Here are the most recent voting results!');
+            this.$router.push('/message/3')
 		},
 		getUser() {
             this.user = this.userStore.getUser
 		},
-		getProfs() {
+		async getProfs() {
+			if ( await this.profsStore.getProfsDB() ) {
+				//if get profs success
 				this.profs = this.profsStore.getProfs
+			}
 		},
 		getProfByID(id) {
             return this.profs.filter((prof) => prof.id === id)

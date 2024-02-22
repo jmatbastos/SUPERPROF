@@ -18,7 +18,7 @@ export const useProfsStore = defineStore({
             return state.profs;
         }, 
     }, 
-    actions: {   
+    actions: {  
         async getProfsDB() {
 			try {
 				const response = await fetch('http://daw.deei.fct.ualg.pt/~a333330/api/profs.php')

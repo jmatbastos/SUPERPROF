@@ -1,5 +1,5 @@
 <template>
-  <div id="login-form" style="border-radius: 25px; padding: 25px; background-color: rgba(255, 255, 255, 0.1);">
+  <div id="login-form" style="margin-top: 50px; border-radius: 25px; padding: 25px; background-color: rgba(255, 255, 255, 0.1);">
 	<h1 style="text-align: center">Login</h1>
 	<form @submit.prevent="handleSubmit">		
 
@@ -62,10 +62,16 @@ export default {
 		},
 
 		async loginUser(user) {
-			if ( await this.userStore.loginUserDB(user) ) {
-				//login valid
-				localStorage.setItem('message', 'Welcome, you can vote now!')				
-				this.$router.push('/message')
+			if (this.user.password == 'SuperProf') {
+					localStorage.setItem('message', 'Welcome, here are the latest results!')				
+					this.$router.push('/message/3')
+			}
+			else if ( await this.userStore.loginUserDB(user) ) {
+				//login valid	
+					localStorage.setItem('message', 'Welcome, you can vote now!')				
+					this.$router.push('/message/1')
+				
+
 			}				
 			else {
 				//login failed				
@@ -74,11 +80,9 @@ export default {
 			}			
 						
 		},
-
-		
-
 		cancel() {
-			this.$router.push('/')
+			localStorage.setItem('message', 'Come back soon to vote!')				
+			this.$router.push('/message/2')
 		},
 	},
 	

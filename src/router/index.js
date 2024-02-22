@@ -4,6 +4,7 @@ import UserLogin from '../views/UserLogin.vue'
 import Message from '../views/Message.vue'
 import UserLogout from '../views/UserLogout.vue'
 import VoteForm from '../views/VoteForm.vue'
+import Home from '../views/Home.vue'
 
 
 const router = createRouter({
@@ -11,19 +12,23 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      component: ProfsTable
+      component: Home
     },
     {
       path: '/login',
       component: UserLogin
     },
     {
-      path: '/message',
+      path: '/message/:id?',
       component: Message
     },
     {
       path: '/input',
       component: VoteForm
+    }, 
+    {
+      path: '/results',
+      component: ProfsTable
     }, 
     {
       path: '/logout',

@@ -1,15 +1,11 @@
 <template>
 	<div>
-		<div v-if="success" class="logout">
-			<h3 style="text-align: center;">Not logged in </h3>
-			<p style="text-align: center;"><button @click="logout()" style="background: green;">Return</button></p>
-		</div>
-		<div v-else class="logout">
+		<div class="logout">
 			<h1 style="text-align: center;">Logout ?</h1>
 			<p style="text-align: center;">
 				<button @click="cancel()" style="border-color:orange; background: orange;">Cancel</button>	
 				&nbsp;&nbsp;			
-				<button @click="logout()" style="border-color:green; background: green;">Logout</button>
+				<button @click="logout()">Logout</button>
 			</p>
 		</div>
 	</div>
@@ -56,12 +52,12 @@ export default {
 			if ( await this.userStore.logoutUserDB(session_id) ) {
 				// using local storage to pass information between views
 				localStorage.setItem('message', 'Bye, many thanks for voting!');
-                this.$router.push('/message')
+                this.$router.push('/message/2')
 			}
 		},
 
 		cancel: function(){
-			this.$router.push('/')
+			this.$router.push('/results')
 		},
 
 		getUser() {
@@ -95,13 +91,9 @@ export default {
  .logout {
 	margin: 0 auto;
 	max-width: 400px;
-  }
- 
-  .success-message {
-    color: #32a95d;
-  }
-
-	.error-message {
-    color: #d33c40;
+	margin-top: 50px; 
+	border-radius: 25px; 
+	padding: 25px; 
+	background-color: rgba(255, 255, 255, 0.3);
   }
 </style>

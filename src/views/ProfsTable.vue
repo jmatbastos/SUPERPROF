@@ -1,10 +1,7 @@
 <template >
-<div class="small-container">
-	<div v-if="!userLoggedIn">
-		<h1 style="text-align: center">Welcome to the SuperProf App !</h1>	
-	</div>
-	<div v-if="showProfs" style="opacity:0.5;background-color: white;border-radius: 15px;">
-		<p v-if="userLoggedIn" style="float:right;">Logout <router-link to="/logout">here</router-link>&nbsp;&nbsp;</p>
+<div class="small-container" style="margin-top:20px;margin-bottom:20px;padding-top:10px;opacity:0.5;background-color: white;border-radius: 15px;">
+	<div v-if="showProfs" >
+		<p style="float:right;"> <router-link to="/logout"><button>Logout</button></router-link>&nbsp;&nbsp;</p>
 		<h1 style="text-align: center">Profs</h1>
 		<table>
 			<thead>
@@ -25,10 +22,8 @@
 			</tbody>
 		</table>
 		<b>&nbsp;&nbsp;<a href="/blockchains" @click.prevent="toggleProfs()">Show blockchains</a></b>
-		<p v-if="!userLoggedIn" style="float:right;"><router-link to="/login"><button>Login to vote!</button></router-link></p>	
-		<p v-else  style="float:right;"><button @click="goToVote()">Cast your Vote !</button></p>
 	</div>
-	<div v-else style="opacity:0.5;background-color: white;border-radius: 15px;">
+	<div v-else >
 		<h1 style="text-align: center">Blockchains</h1>
 		
 		<table>
@@ -126,10 +121,7 @@ export default {
 		},
 		getUser() {
             this.user = this.userStore.user
-		},
-		goToVote() {
-			this.$router.push('/input')
-		}		
+		},		
 	},
 	computed: {
 		userLoggedIn: function () {
