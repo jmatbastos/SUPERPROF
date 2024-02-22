@@ -1,6 +1,6 @@
 <template>
 
-	<div class="logout">
+	<div class="logout" style="margin-top:270px;margin-bottom: 200px;">
 		<h1 style="text-align: center;">Logout ?</h1>
 		<p style="text-align: center;">
 			<button @click="cancel()" style="border-color:orange; background: orange;">Cancel</button>	
@@ -92,9 +92,8 @@ export default {
  .logout {
 	margin: 0 auto;
 	max-width: 400px;
-	margin-top: 50px; 
 	border-radius: 25px; 
 	padding: 25px; 
-	background-color: rgba(255, 255, 255, 0.3);
+	background-color: rgba(255, 255, 255, 0.8);
   }
 </style>

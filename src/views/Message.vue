@@ -64,7 +64,7 @@ export default {
 	.logout {
 	margin: 0 auto;
 	max-width: 800px;
-	margin-top: 200px;
+	margin-top: 100px;
 	}
 
 	.success-message {

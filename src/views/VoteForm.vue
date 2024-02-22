@@ -1,14 +1,14 @@
 <template>
 <div class="small-container">
-   <div v-if="!userLoggedIn" class="logout" style="margin-top: 200px;">
+   <div v-if="!userLoggedIn" class="logout" style="margin-top:300px;margin-bottom:20px;padding-top:10px;background-color: rgba(255, 255, 255, 0.8);border-radius: 15px;">
 			<h3 style="text-align: center;">Not logged in </h3>
 			<p style="text-align: center;"><button @click="login()">Login first</button></p>
   </div>
-  <div v-if="userLoggedIn && user.voted=='1'" style="margin-top:200px;">
+  <div v-if="userLoggedIn && user.voted=='1'" style="margin-top:300px;margin-bottom:20px;padding-top:10px;background-color: rgba(255, 255, 255, 0.8);border-radius: 15px;">
 	<h3 style="text-align: center;">You have already voted on {{user.voted_at}} </h3>
 	<p style="text-align: center;"><button @click="close()">Close</button></p>
   </div>
-  <div v-if="userLoggedIn && user.voted!='1'">
+  <div v-if="userLoggedIn && user.voted!='1'" style="margin-top:20px;margin-bottom:20px;padding-top:10px;background-color: rgba(255, 255, 255, 0.8);border-radius: 15px;">
 	<h1 style="text-align: center">Choose your SuperPROF!</h1>
 	<form @submit.prevent="handleSubmit">
 

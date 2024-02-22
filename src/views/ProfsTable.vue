@@ -1,6 +1,6 @@
 <template >
 
-<div class="small-container" style="margin-top:20px;margin-bottom:20px;padding-top:10px;opacity:0.5;background-color: white;border-radius: 15px;">
+<div class="small-container" style="margin-top:20px;margin-bottom:20px;padding-top:10px;opacity:0.9;background-color: white;border-radius: 15px;">
 	<div v-if="showProfs" >
 		<p style="float:right;"> <router-link to="/logout"><button>Logout</button></router-link>&nbsp;&nbsp;</p>
 		<h1 style="text-align: center">Profs</h1>
