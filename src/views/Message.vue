@@ -1,5 +1,4 @@
 <template>
-
 	<div class="logout">
 			<h1 class="success-message" style="text-align: center;">{{message}}</h1>
 			<div class="color" style="text-align: center;">
@@ -63,19 +62,20 @@ export default {
 <style scoped>
 	.logout {
 	margin: 0 auto;
-	max-width: 800px;
 	margin-top: 100px;
+	max-width: 600px;
+	margin-bottom:100px;
 	}
 
 	.success-message {
-	color: #32a95d;
+	color: black;
 	}
 	.color{
 		position: relative;
 		background-color: #f4a261;
 		height: 20px;
 		border-radius: 25px;
-		animation: progres 3s linear;    
+		animation: progres 3s linear;   
 	}
 	@keyframes progres{
 		0%{

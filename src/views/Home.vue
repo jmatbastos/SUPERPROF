@@ -1,7 +1,7 @@
 <template >
 
     <div class="small-container">
-        <div style="margin-top: 100px; text-align: center">
+        <div style="margin-top: 100px; 	margin-bottom:100px;text-align: center">
             <h1 >Welcome to the SuperProf App !</h1>	
             <button @click="Login()">Choose your SuperProf!</button>
         </div>
