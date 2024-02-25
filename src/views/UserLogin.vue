@@ -12,10 +12,10 @@
 				@keypress="clearStatus"	
 			/>
 			<p v-if="error && submitting" class="error-message">
-				❗Please fill out all required fields
+				❗Tens que entrar a tua password
 			</p>
 			<br>
-			<button @click="cancel()" style="border-color: orange;background: orange;">Cancel</button>	
+			<button @click="cancel()" style="border-color: orange;background: orange;">Cancelar</button>	
 			<p style="float:right;"><button type="submit">Login</button></p>
 		</form>
 	</div>
@@ -62,12 +62,12 @@ export default {
 
 		async loginUser(user) {
 			if (this.user.password == 'SuperProf') {
-					localStorage.setItem('message', 'Welcome, here are the latest results!')				
+					localStorage.setItem('message', 'Bem-vindo, aqui estão os resultados atuais da votação!')				
 					this.$router.push('/message/3')
 			}
 			else if ( await this.userStore.loginUserDB(user) ) {
 				//login valid	
-					localStorage.setItem('message', 'Welcome, you can vote now!')				
+					localStorage.setItem('message','Bem-vindo, já podes votar!')				
 					this.$router.push('/message/1')
 				
 
@@ -80,7 +80,7 @@ export default {
 						
 		},
 		cancel() {
-			localStorage.setItem('message', 'Come back soon to vote!')				
+			localStorage.setItem('message', 'Até logo, volta em breve para votares!')				
 			this.$router.push('/message/2')
 		},
 	},

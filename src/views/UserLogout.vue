@@ -3,7 +3,7 @@
 	<div class="logout" style="margin-top:270px;margin-bottom: 200px;">
 		<h1 style="text-align: center;">Logout ?</h1>
 		<p style="text-align: center;">
-			<button @click="cancel()" style="border-color:orange; background: orange;">Cancel</button>	
+			<button @click="cancel()" style="border-color:orange; background: orange;">Cancelar</button>	
 			&nbsp;&nbsp;			
 			<button @click="logout()">Logout</button>
 		</p>
@@ -43,7 +43,7 @@ export default {
 				this.logoutUser(this.user.session_id)
 			} else {
 				// No user is signed in, it is a Prof!
-				localStorage.setItem('message', 'Bye!');
+				localStorage.setItem('message', 'Até breve!');
                 this.$router.push('/message/2')
 			}
 
@@ -52,7 +52,7 @@ export default {
 		async logoutUser(session_id) {
 			if ( await this.userStore.logoutUserDB(session_id) ) {
 				// using local storage to pass information between views
-				localStorage.setItem('message', 'Bye, many thanks for voting!');
+				localStorage.setItem('message', 'Até breve, obrigado por votares!');
                 this.$router.push('/message/2')
 			}
 		},

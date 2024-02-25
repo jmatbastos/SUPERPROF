@@ -8,9 +8,9 @@
 			<thead>
 				<tr>
 				<th>ID</th>									
-				<th>Name</th>
-				<th>Votes</th>
-				<th>Last voted</th>
+				<th>Nome</th>
+				<th>Votos</th>
+				<th>Última votação</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -22,7 +22,7 @@
 				</tr>
 			</tbody>
 		</table>
-		<b>&nbsp;&nbsp;<a href="/blockchains" @click.prevent="toggleProfs()">Show blockchains</a></b>
+		<b>&nbsp;&nbsp;<a href="/blockchains" @click.prevent="toggleProfs()">Mostrar as blockchains</a></b>
 	</div>
 	<div v-else >
 		<h1 style="text-align: center">Blockchains</h1>
@@ -45,7 +45,7 @@
 				</tr>
 			</tbody>
 		</table>
-		<b>&nbsp;&nbsp;<a href="/" @click.prevent="toggleProfs()">Show Profs</a></b>
+		<b>&nbsp;&nbsp;<a href="/" @click.prevent="toggleProfs()">Mostrar Profs</a></b>
 	</div>
 	<Modal
 				v-show="isModalVisible"
@@ -86,7 +86,7 @@ export default {
 			user: {},
 			showProfs: true,
 			isModalVisible: false,
-			modalContents: 'This is a new modal body.'
+			modalContents: ''
 		}
 	},
 	created() {

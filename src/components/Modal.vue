@@ -15,7 +15,7 @@
             class="btn-green"
             @click="close"
           >
-            Close
+            Fechar
           </button>
         </footer>
       </div>
