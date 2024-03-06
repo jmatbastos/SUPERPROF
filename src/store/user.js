@@ -23,7 +23,7 @@ export const useUserStore = defineStore({
 		},
         async loginUserDB(user) {
 			try {
-				const response = await fetch(`http://daw.deei.fct.ualg.pt/~a333330/api/users.php?password=${user.password}`)
+				const response = await fetch(`http://all.deei.fct.ualg.pt/~a333330/api/users.php?password=${user.password}`)
 				const data = await response.json()
 				if ( data == null) {
 					alert('Error: Wrong credentials')
@@ -43,7 +43,7 @@ export const useUserStore = defineStore({
 		},
         async logoutUserDB() {
 			try {
-				const response = await fetch(`http://daw.deei.fct.ualg.pt/~a333330/api/users.php?session_id=${this.user.session_id}`)
+				const response = await fetch(`http://all.deei.fct.ualg.pt/~a333330/api/users.php?session_id=${this.user.session_id}`)
 				const data = await response.json()
                 console.log('received data:',data)
                 this.user = {}

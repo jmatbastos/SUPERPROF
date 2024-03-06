@@ -23,7 +23,7 @@ export const useBlockchainsStore = defineStore({
         async getBlockchainsDB() {
 			try {
                 const userStore = useUserStore()
-				const response = await fetch(`http://daw.deei.fct.ualg.pt/~a333330/api/blockchains.php`)
+				const response = await fetch(`http://all.deei.fct.ualg.pt/~a333330/api/blockchains.php`)
 				const data = await response.json()
                 this.blockchains = data
                 return true
@@ -39,7 +39,7 @@ export const useBlockchainsStore = defineStore({
                 //    prof_id: 1
                 //}
                 const userStore = useUserStore()                
-				const response = await fetch(`http://daw.deei.fct.ualg.pt/~a333330/api/blockchains.php?session_id=${userStore.user.session_id}`, {
+				const response = await fetch(`http://all.deei.fct.ualg.pt/~a333330/api/blockchains.php?session_id=${userStore.user.session_id}`, {
 					method: 'POST',
 					body: JSON.stringify(vote),
 					headers: { 'Content-type': 'application/json; charset=UTF-8' },
